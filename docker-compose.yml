@@ -1,0 +1,21 @@
+---
+version: "3.8"
+
+services:
+  expire-to-mail:
+    container_name: expire-to-mail
+    image: ageres210784/expire-to-mail:latest
+    build:
+      context: .
+      target: build
+    environment:
+      - EMAIL_LOGIN=${EMAIL_LOGIN}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_SMTP_ADDR=${EMAIL_SMTP_ADDR}
+      - EMAIL_SMTP_PORT=${EMAIL_SMTP_PORT}
+      - LDAP_BIND_DN=${LDAP_BIND_DN}
+      - LDAP_BIND_PW=${LDAP_BIND_PW}
+      - LDAP_FILTER_EXP=${LDAP_FILTER_EXP}
+      - LDAP_ROOT_DN=${LDAP_ROOT_DN}
+      - LDAP_URL=${LDAP_URL}
+      - PASSWD_ALERT_TIME=${PASSWD_ALERT_TIME}
